@@ -16,7 +16,7 @@ var bot = new builder.UniversalBot(connector);
 bot.dialog('/', function (session) {
     if (session.message.text == "date")
     {
-        session.send('date: ' + session.message.text);
+        session.send('date2: ' + session.message.text);
     } else
     {
         session.send('You said ' + session.message.text);
