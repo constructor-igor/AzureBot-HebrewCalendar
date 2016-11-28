@@ -49,8 +49,8 @@ bot.dialog('/', function (session) {
 		var tyear = uDate.getFullYear();
 
 		var hebDate = kdate.civ2heb_v1(tday, tmonth, tyear);
-		var currentData = hebDateToString(hebDate);
-		var data = {text: currentData, bot: "hcalendar-bot"};
+		var currentDate = hebDateToString(hebDate);
+        session.send('Hebrew Date: ' + currentDate);
     } else
     {
         // session.send('You said ' + session.message.text);
