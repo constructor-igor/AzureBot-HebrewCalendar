@@ -48,7 +48,7 @@ bot.dialog('/', function (session) {
         case "help":
         case "info":
         case "?":
-            session.send('HebrewCalendar bot (v0.0.1.2) supports next command\n\n - help\n\n - date' );
+            session.send('HebrewCalendar bot (v0.0.1.3) supports next commands\n\n - help\n\n - date' );
             break;
         case "date":
 		    var uDate = new Date();
@@ -58,7 +58,7 @@ bot.dialog('/', function (session) {
 
 		    var hebDate = kdate.civ2heb_v1(tday, tmonth, tyear);
 		    var currentDate = hebDateToString(hebDate);
-            session.send('Hebrew Date: ' + currentDate);
+            session.send('Hebrew Date: ' + currentDate + ', (Gregorian:' + uDate + ')');
             break;
         default:
             // session.send('You said ' + session.message.text);
