@@ -63,7 +63,7 @@ bot.dialog('/', function (session) {
                 weekday: "long", year: "numeric", month: "short",
                 day: "numeric", hour: "2-digit", minute: "2-digit"
             };
-            session.send('Hebrew Date: ' + currentDate + ', (Gregorian: ' + uDate.toLocaleDateString("en-US", options) + ')');
+            session.send('Hebrew Date: ' + currentDate + ', (' + uDate.toLocaleDateString("en-US", options) + ')');
             break;
         default:
             // session.send('You said ' + session.message.text);
