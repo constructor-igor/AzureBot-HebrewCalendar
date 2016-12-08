@@ -44,7 +44,7 @@ bot.dialog('/', function (session) {
     var message = session.message.text; 
     console.log('test bot endpont at http://localhost:3978/api/messages');
 
-    switch(expression) {
+    switch(message) {
         case "help":
         case "info":
         case "?":
