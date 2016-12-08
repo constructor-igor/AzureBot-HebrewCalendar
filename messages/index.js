@@ -41,19 +41,28 @@ var connector = useEmulator ? new builder.ChatConnector() : new botbuilder_azure
 var bot = new builder.UniversalBot(connector);
 
 bot.dialog('/', function (session) {
-    if (session.message.text == "date")
-    {
-		var uDate = new Date();
-		var tday = uDate.getDate();
-		var tmonth = uDate.getMonth() + 1;
-		var tyear = uDate.getFullYear();
+    var message = session.message.text; 
+    console.log('test bot endpont at http://localhost:3978/api/messages');
 
-		var hebDate = kdate.civ2heb_v1(tday, tmonth, tyear);
-		var currentDate = hebDateToString(hebDate);
-        session.send('Hebrew Date: ' + currentDate);
-    } else
-    {
-        // session.send('You said ' + session.message.text);
+    switch(expression) {
+        case "help":
+        case "info":
+        case "?":
+            session.send('HebrewCalendar bot supports next command\n - help -date' );
+            break;
+        case "date":
+		    var uDate = new Date();
+		    var tday = uDate.getDate();
+		    var tmonth = uDate.getMonth() + 1;
+		    var tyear = uDate.getFullYear();
+
+		    var hebDate = kdate.civ2heb_v1(tday, tmonth, tyear);
+		    var currentDate = hebDateToString(hebDate);
+            session.send('Hebrew Date: ' + currentDate);
+            break;
+        default:
+            // session.send('You said ' + session.message.text);
+            break;
     }
 });
 
