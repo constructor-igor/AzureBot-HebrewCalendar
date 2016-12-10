@@ -48,7 +48,7 @@ bot.dialog('/', function (session) {
         case "help":
         case "info":
         case "?":
-            session.send('HebrewCalendar bot (v0.0.1.5) supports next commands\n\n - help\n\n - date' );
+            session.send('HebrewCalendar bot (v0.0.1.6) supports next commands\n\n - help\n\n - date' );
             break;
         case "date":
 		    var uDate = new Date();
