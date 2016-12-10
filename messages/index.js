@@ -48,7 +48,7 @@ bot.dialog('/', function (session) {
         case "help":
         case "info":
         case "?":
-            session.send('HebrewCalendar bot (v0.0.1.6) supports next commands\n\n - help\n\n - date' );
+            session.send('HebrewCalendar bot (v0.0.1.7) supports next commands\n\n - help\n\n - date' );
             break;
         case "date":
 		    var uDate = new Date();
@@ -71,7 +71,7 @@ bot.dialog('/', function (session) {
                 day: "numeric", hour: "2-digit", minute: "2-digit"
             };
             var uDate = new Date(session.message.timestamp);
-            session.send('chart service time: ' + uDate.toLocaleDateString("en-US", options));
+            session.send('chart service time: ' + session.message.timestamp + "(" + uDate.toLocaleDateString("en-US", options) + ")");
             break;
         default:
             // session.send('You said ' + session.message.text);
