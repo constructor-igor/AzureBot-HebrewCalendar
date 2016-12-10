@@ -66,7 +66,12 @@ bot.dialog('/', function (session) {
             session.send('Hebrew Date: ' + currentDate + ', (' + uDate.toLocaleDateString("en-US", options) + ')');
             break;
         case "time":
-            session.send('chart service time: ' + session.message.timestamp);
+            var options = {
+                weekday: "long", year: "numeric", month: "short",
+                day: "numeric", hour: "2-digit", minute: "2-digit"
+            };
+            var uDate = new Date(session.message.timestamp);
+            session.send('chart service time: ' + uDate.toLocaleDateString("en-US", options));
             break;
         default:
             // session.send('You said ' + session.message.text);
