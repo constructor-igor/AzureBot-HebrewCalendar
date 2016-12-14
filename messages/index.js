@@ -42,8 +42,7 @@ var bot = new builder.UniversalBot(connector);
 
 // only include tokens for the platforms that you support
 const dashbotApiMap = {
-  skype: 'EdoWAR3a3srqIINsbiiRObVeSJHZNfh9EojlQg7v' 
-//   skype: process.env.DASHBOT_API_KEY_GENERIC
+    skype: process.env.DASHBOT_API_KEY_GENERIC
 }
 
 const dashbot = require('dashbot')(dashbotApiMap).microsoft
