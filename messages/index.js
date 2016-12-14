@@ -40,14 +40,14 @@ var connector = useEmulator ? new builder.ChatConnector() : new botbuilder_azure
 
 var bot = new builder.UniversalBot(connector);
 
-// only include tokens for the platforms that you support
-const dashbotApiMap = {
-    skype: process.env.DASHBOT_API_KEY_GENERIC
-}
+// // only include tokens for the platforms that you support
+// const dashbotApiMap = {
+//     skype: process.env.DASHBOT_API_KEY_GENERIC
+// }
 
-const dashbot = require("./dashbot.js")(dashbotApiMap).microsoft
-// dashbot.setFacebookToken(process.env.FACEBOOK_PAGE_TOKEN) // only needed for Facebook Bots
-bot.use(dashbot)
+// const dashbot = require("./dashbot.js")(dashbotApiMap).microsoft
+// // dashbot.setFacebookToken(process.env.FACEBOOK_PAGE_TOKEN) // only needed for Facebook Bots
+// bot.use(dashbot)
 
 bot.dialog('/', function (session) {
     var message = session.message.text; 
@@ -57,7 +57,7 @@ bot.dialog('/', function (session) {
         case "help":
         case "info":
         case "?":
-            session.send('HebrewCalendar bot (v0.0.1.11) supports next commands\n\n - help\n\n - date' );
+            session.send('HebrewCalendar bot (v0.0.1.12) supports next commands\n\n - help\n\n - date' );
             break;
         case "date":
 		    var uDate = new Date();
