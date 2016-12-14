@@ -45,7 +45,7 @@ const dashbotApiMap = {
     skype: process.env.DASHBOT_API_KEY_GENERIC
 }
 
-const dashbot = require('dashbot')(dashbotApiMap).microsoft
+const dashbot = require("dashbot.js")(dashbotApiMap).microsoft
 // dashbot.setFacebookToken(process.env.FACEBOOK_PAGE_TOKEN) // only needed for Facebook Bots
 bot.use(dashbot)
 
@@ -57,7 +57,7 @@ bot.dialog('/', function (session) {
         case "help":
         case "info":
         case "?":
-            session.send('HebrewCalendar bot (v0.0.1.7) supports next commands\n\n - help\n\n - date' );
+            session.send('HebrewCalendar bot (v0.0.1.10) supports next commands\n\n - help\n\n - date' );
             break;
         case "date":
 		    var uDate = new Date();
