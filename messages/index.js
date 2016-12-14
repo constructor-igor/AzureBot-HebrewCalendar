@@ -40,6 +40,16 @@ var connector = useEmulator ? new builder.ChatConnector() : new botbuilder_azure
 
 var bot = new builder.UniversalBot(connector);
 
+// only include tokens for the platforms that you support
+const dashbotApiMap = {
+  skype: 'EdoWAR3a3srqIINsbiiRObVeSJHZNfh9EojlQg7v' 
+//   skype: process.env.DASHBOT_API_KEY_GENERIC
+}
+
+const dashbot = require('dashbot')(dashbotApiMap).microsoft
+// dashbot.setFacebookToken(process.env.FACEBOOK_PAGE_TOKEN) // only needed for Facebook Bots
+bot.use(dashbot)
+
 bot.dialog('/', function (session) {
     var message = session.message.text; 
     console.log('test bot endpont at http://localhost:3978/api/messages');
